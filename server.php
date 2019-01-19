@@ -12,7 +12,7 @@ class WebsocketTest {
             //echo "receive from {$frame->fd}:{$frame->data},opcode:{$frame->opcode},fin:{$frame->finish}\n";           
             foreach( $this->request_id as $v )
             {
-            	if( $this->Server->isEstablished($v) )
+            	if( $this->Server->exist($v) )
             	{
             		$server->push($v, $frame->data);
             	}
