@@ -4,11 +4,14 @@ class WebsocketTest {
     public function __construct() {
         $this->server = new Swoole\WebSocket\Server("0.0.0.0", 9501);
         $this->server->on('open', function (swoole_websocket_server $server, $request) {
-            echo "server: handshake success with fd{$request->fd}\n";
+            //echo "server: handshake success with fd{$request->fd}\n";
         });
         $this->server->on('message', function (Swoole\WebSocket\Server $server, $frame) {
-            echo "receive from {$frame->fd}:{$frame->data},opcode:{$frame->opcode},fin:{$frame->finish}\n";
-            $server->push($frame->fd, "this is server");
+            //echo "receive from {$frame->fd}:{$frame->data},opcode:{$frame->opcode},fin:{$frame->finish}\n";           
+            foreach( $request->fd as $v )
+            {
+            	$server->push($v, $frame->data);
+            }
         });
         $this->server->on('close', function ($ser, $fd) {
             echo "client {$fd} closed\n";
