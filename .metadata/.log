@@ -1,0 +1,19 @@
+!SESSION 2019-01-19 22:06:14.263 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_18
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -showlocation -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86 -showlocation -data D:\web\phpstudy\WWW\websocket -showlocation
+
+!ENTRY org.eclipse.osgi 2 1 2019-01-19 22:06:19.071
+!MESSAGE NLS unused message: RemoteServerConfigurationPage_RemoteConfiguratiuon in: com.zend.php.remoteproject.internal.ui.wizard.messages
+
+!ENTRY org.eclipse.osgi 2 1 2019-01-19 22:06:19.071
+!MESSAGE NLS unused message: RemoteServerConfigurationPage_formatServerURLError in: com.zend.php.remoteproject.internal.ui.wizard.messages
+
+!ENTRY org.eclipse.osgi 2 1 2019-01-19 22:06:19.075
+!MESSAGE NLS missing message: CreateProjectWorkspaceJob_0 in: com.zend.php.remoteproject.internal.ui.wizard.messages
+
+!ENTRY org.eclipse.osgi 2 1 2019-01-19 22:06:19.075
+!MESSAGE NLS missing message: CreateProjectWorkspaceJob_1 in: com.zend.php.remoteproject.internal.ui.wizard.messages
