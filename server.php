@@ -1,14 +1,16 @@
 <?php
 class WebsocketTest {
     public $server;
+    public $request_id;
     public function __construct() {
         $this->server = new Swoole\WebSocket\Server("0.0.0.0", 9501);
         $this->server->on('open', function (swoole_websocket_server $server, $request) {
             //echo "server: handshake success with fd{$request->fd}\n";
+            $this->request_id[] = $request->fd;
         });
         $this->server->on('message', function (Swoole\WebSocket\Server $server, $frame) {
             //echo "receive from {$frame->fd}:{$frame->data},opcode:{$frame->opcode},fin:{$frame->finish}\n";           
-            foreach( $request->fd as $v )
+            foreach( $this->request_id as $v )
             {
             	$server->push($v, $frame->data);
             }
