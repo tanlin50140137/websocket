@@ -15,7 +15,6 @@ class WebsocketTest {
             	if( $this->Server->isEstablished($v) )
             	{
             		$server->push($v, $frame->data);
-            		continue;
             	}
             }
         });
