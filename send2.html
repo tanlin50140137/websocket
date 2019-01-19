@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>给服务器发送消息</title>
+</head>
+<body>
+<div id="sendbox"></div>
+<input type="text" id="send"/> <input type="button" value="发送" onclick="sned();"/>
+<script src="jquery-1.11.2.min.js"></script>
+<script>
+var ws = new WebSocket("ws://192.168.1.102:9501");//一定要以ws://开头 ，端口是否可用(试验中可以直接关闭防火墙centos7用 systemctl stop firewalld.service ；7以下的用service iptables stop )
+
+ws.onopen = function(evt) { 
+	console.log("握手成功");
+};
+
+ws.onmessage = function(evt) {
+  $("#sendbox").append( "<p>" + evt.data +"</p>");
+};
+
+ws.onclose = function(evt) {
+  console.log("Connection closed.");
+  ws.close();
+};   
+function sned()
+{
+	ws.send($("#send").val());//向php服务器发送数据	
+}
+</script>
+</body>
+</html>
