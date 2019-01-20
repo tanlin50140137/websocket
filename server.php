@@ -10,7 +10,7 @@ class WebsocketTest {
         $this->server = new Swoole\WebSocket\Server("0.0.0.0", 9501);
         $this->server->on('open', function (swoole_websocket_server $server, $request) {
             //echo "server: handshake success with fd{$request->fd}\n";
-            $this->request_id[] = $request->fd;
+            //$this->request_id[] = $request->fd;
         });
         $this->server->on('message', function (Swoole\WebSocket\Server $server, $frame) {
             //echo "receive from {$frame->fd}:{$frame->data},opcode:{$frame->opcode},fin:{$frame->finish}\n";           
