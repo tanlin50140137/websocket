@@ -1,4 +1,8 @@
 <?php
+require 'databases/this_base_concet.php';
+require 'databases/this_single_case.php';
+require 'databases/this_factory.php';
+
 class WebsocketTest {
     public $server;
     public $request_id;
